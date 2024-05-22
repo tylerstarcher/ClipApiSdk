@@ -9,16 +9,18 @@
     <Authors>OpenAPI</Authors>
     <Company>OpenAPI</Company>
     <AssemblyTitle>OpenAPI Library</AssemblyTitle>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <Description>A library generated from a OpenAPI doc</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>clipapisdk</RootNamespace>
     <Version>1.0.0</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\clipapisdk.xml</DocumentationFile>
-    <RepositoryUrl>https://github.com/GIT_USER_ID/GIT_REPO_ID.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/tylerstarcher/ClipApiSdk</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Minor update</PackageReleaseNotes>
+    <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
     <Nullable>annotations</Nullable>
     <Title>ClipApiSdk</Title>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
