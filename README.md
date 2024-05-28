@@ -136,6 +136,9 @@ Class | Method | HTTP request | Description
 *LightLevelApi* | [**GetLightLevel**](docs/LightLevelApi.md#getlightlevel) | **GET** /clip/v2/resource/light_level/{lightId} | Get light
 *LightLevelApi* | [**GetLightLevels**](docs/LightLevelApi.md#getlightlevels) | **GET** /clip/v2/resource/light_level | List light levels.
 *LightLevelApi* | [**UpdateLightLevel**](docs/LightLevelApi.md#updatelightlevel) | **PUT** /clip/v2/resource/light_level/{lightId} | Update light
+*MotionApi* | [**GetMotionSensor**](docs/MotionApi.md#getmotionsensor) | **GET** /clip/v2/resource/motion/{motionId} | Get motion sensor.
+*MotionApi* | [**GetMotionSensors**](docs/MotionApi.md#getmotionsensors) | **GET** /clip/v2/resource/motion | List motion sensors.
+*MotionApi* | [**UpdateMotionSensor**](docs/MotionApi.md#updatemotionsensor) | **PUT** /clip/v2/resource/motion/{motionId} | Update Motion Sensor
 *ResourceApi* | [**GetResources**](docs/ResourceApi.md#getresources) | **GET** /clip/v2/resource | List resources
 *RoomApi* | [**CreateRoom**](docs/RoomApi.md#createroom) | **POST** /clip/v2/resource/room | Create room
 *RoomApi* | [**DeleteRoom**](docs/RoomApi.md#deleteroom) | **DELETE** /clip/v2/resource/room/{roomId} | Delete room
@@ -201,6 +204,7 @@ Class | Method | HTTP request | Description
  - [Model.GetGroupedLights200Response](docs/GetGroupedLights200Response.md)
  - [Model.GetLightLevels200Response](docs/GetLightLevels200Response.md)
  - [Model.GetLights200Response](docs/GetLights200Response.md)
+ - [Model.GetMotionSensors200Response](docs/GetMotionSensors200Response.md)
  - [Model.GetResources200Response](docs/GetResources200Response.md)
  - [Model.GetRooms200Response](docs/GetRooms200Response.md)
  - [Model.GetScenes200Response](docs/GetScenes200Response.md)
@@ -233,6 +237,12 @@ Class | Method | HTTP request | Description
  - [Model.LightLevelPut](docs/LightLevelPut.md)
  - [Model.LightPut](docs/LightPut.md)
  - [Model.LightPutTimedEffects](docs/LightPutTimedEffects.md)
+ - [Model.MotionGet](docs/MotionGet.md)
+ - [Model.MotionGetAllOfMotion](docs/MotionGetAllOfMotion.md)
+ - [Model.MotionGetAllOfMotionMotionReport](docs/MotionGetAllOfMotionMotionReport.md)
+ - [Model.MotionGetAllOfSensitivity](docs/MotionGetAllOfSensitivity.md)
+ - [Model.MotionPut](docs/MotionPut.md)
+ - [Model.MotionPutSensitivity](docs/MotionPutSensitivity.md)
  - [Model.On](docs/On.md)
  - [Model.Powerup](docs/Powerup.md)
  - [Model.PowerupDimming](docs/PowerupDimming.md)

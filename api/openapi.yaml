@@ -36,6 +36,9 @@ tags:
 - description: API to manage light level services. These are offered by devices with
     light level sensing capabilities.
   name: LightLevel
+- description: API to manage motion services. These are offered by devices with motion
+    sensing capabilities.
+  name: Motion
 - description: "API to manage grouped light services. These are offered by rooms,\
     \ zones, and homes."
   name: GroupedLight
@@ -1184,6 +1187,261 @@ paths:
       summary: Update light
       tags:
       - LightLevel
+  /clip/v2/resource/motion:
+    get:
+      description: List all available motion sensors.
+      operationId: getMotionSensors
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getMotionSensors_200_response'
+          description: Motion Success Response
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Not Found
+        "405":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Method Not Allowed
+        "406":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Not Acceptable
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Conflict
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Too Many Requests
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Internal Server Error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Service Unavailable
+        "507":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Insufficient Storage
+      security:
+      - HueApplicationKey: []
+      summary: List motion sensors.
+      tags:
+      - Motion
+  /clip/v2/resource/motion/{motionId}:
+    get:
+      description: "Get details of a single motion sensor from its given `{motionId}`."
+      operationId: getMotionSensor
+      parameters:
+      - description: ID of the motion sensor
+        explode: false
+        in: path
+        name: motionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getMotionSensors_200_response'
+          description: Motion Success Response
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Not Found
+        "405":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Method Not Allowed
+        "406":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Not Acceptable
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Conflict
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Too Many Requests
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Internal Server Error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Service Unavailable
+        "507":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Insufficient Storage
+      security:
+      - HueApplicationKey: []
+      summary: Get motion sensor.
+      tags:
+      - Motion
+    put:
+      description: "Update a single motion sensor from its given `{motionId}`."
+      operationId: updateMotionSensor
+      parameters:
+      - description: Id of the motion sensor
+        explode: false
+        in: path
+        name: motionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            examples:
+              TurnOn:
+                summary: Turn the motion sensor on.
+                value:
+                  enabled: true
+            schema:
+              $ref: '#/components/schemas/MotionPut'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/updateDevice_200_response'
+          description: Success
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Not Found
+        "405":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Method Not Allowed
+        "406":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Not Acceptable
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Conflict
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Too Many Requests
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Internal Server Error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Service Unavailable
+        "507":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Insufficient Storage
+      security:
+      - HueApplicationKey: []
+      summary: Update Motion Sensor
+      tags:
+      - Motion
   /clip/v2/resource/grouped_light:
     get:
       description: List all grouped lights
@@ -4409,6 +4667,53 @@ components:
           description: "true when sensor is activated, false when deactivated"
           type: boolean
       type: object
+    MotionGet:
+      allOf:
+      - $ref: '#/components/schemas/ResourceOwned'
+      - properties:
+          enabled:
+            description: "ture when the sensor is activated, false when deactivated"
+            type: boolean
+          motion:
+            $ref: '#/components/schemas/MotionGet_allOf_motion'
+          sensitivity:
+            $ref: '#/components/schemas/MotionGet_allOf_sensitivity'
+        type: object
+      example:
+        owner:
+          rtype: device
+          rid: 42edd1f5-9538-4180-9ced-2d9e07f26d0f
+        motion:
+          motion: true
+          motion_report:
+            motion: true
+            changed: changed
+          motion_valid: true
+        id_v1: /lights/8
+        id: 3883f8bf-30a3-445b-ac06-b047d50599df
+        sensitivity:
+          sensitivity_max: 6
+          sensitivity: 0
+          status: set
+        type: light
+        enabled: true
+      type: object
+    MotionPut:
+      example:
+        sensitivity:
+          sensitivity: 0
+        type: type
+        enabled: true
+      properties:
+        type:
+          description: Type of the supported resources (always `motion` here)
+          type: string
+        enabled:
+          description: "true when the sensor is activated, false when deactivated"
+          type: boolean
+        sensitivity:
+          $ref: '#/components/schemas/MotionPut_sensitivity'
+      type: object
     GroupedLightGet:
       allOf:
       - $ref: '#/components/schemas/ResourceOwned'
@@ -5856,6 +6161,54 @@ components:
         errors:
         - description: description
         - description: description
+    getMotionSensors_200_response:
+      allOf:
+      - $ref: '#/components/schemas/ApiResponse'
+      - properties:
+          data:
+            items:
+              $ref: '#/components/schemas/MotionGet'
+            type: array
+        type: object
+      example:
+        data:
+        - owner:
+            rtype: device
+            rid: 42edd1f5-9538-4180-9ced-2d9e07f26d0f
+          motion:
+            motion: true
+            motion_report:
+              motion: true
+              changed: changed
+            motion_valid: true
+          id_v1: /lights/8
+          id: 3883f8bf-30a3-445b-ac06-b047d50599df
+          sensitivity:
+            sensitivity_max: 6
+            sensitivity: 0
+            status: set
+          type: light
+          enabled: true
+        - owner:
+            rtype: device
+            rid: 42edd1f5-9538-4180-9ced-2d9e07f26d0f
+          motion:
+            motion: true
+            motion_report:
+              motion: true
+              changed: changed
+            motion_valid: true
+          id_v1: /lights/8
+          id: 3883f8bf-30a3-445b-ac06-b047d50599df
+          sensitivity:
+            sensitivity_max: 6
+            sensitivity: 0
+            status: set
+          type: light
+          enabled: true
+        errors:
+        - description: description
+        - description: description
     getGroupedLights_200_response:
       allOf:
       - $ref: '#/components/schemas/ApiResponse'
@@ -6939,6 +7292,62 @@ components:
           type: boolean
         light_level_report:
           $ref: '#/components/schemas/LightLevelGet_allOf_light_light_level_report'
+      type: object
+    MotionGet_allOf_motion_motion_report:
+      example:
+        motion: true
+        changed: changed
+      properties:
+        changed:
+          description: last time the value of this property is changed
+          type: string
+        motion:
+          description: true if motion is detected
+          type: boolean
+      type: object
+    MotionGet_allOf_motion:
+      example:
+        motion: true
+        motion_report:
+          motion: true
+          changed: changed
+        motion_valid: true
+      properties:
+        motion:
+          description: Deprecated. Moved to motion_report/motion.
+          type: boolean
+        motion_valid:
+          description: "Deprecated. Motion is valid when motion_report property is\
+            \ present, invalid when absent."
+          type: boolean
+        motion_report:
+          $ref: '#/components/schemas/MotionGet_allOf_motion_motion_report'
+      type: object
+    MotionGet_allOf_sensitivity:
+      example:
+        sensitivity_max: 6
+        sensitivity: 0
+        status: set
+      properties:
+        status:
+          enum:
+          - set
+          - changing
+          type: string
+        sensitivity:
+          description: Sensitivity of the sensor. Value in the range 0 to sensitivity_max
+          type: integer
+        sensitivity_max:
+          description: Maximum value of the sensitivity configuration attribute.
+          type: integer
+      type: object
+    MotionPut_sensitivity:
+      example:
+        sensitivity: 0
+      properties:
+        sensitivity:
+          description: Sensitivity of the sensor. Value in the range 0 to sensitivity_max.
+          type: integer
       type: object
     GroupedLightGet_allOf_alert:
       description: Joined alert control

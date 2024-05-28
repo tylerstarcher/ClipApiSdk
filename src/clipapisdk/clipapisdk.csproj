@@ -13,11 +13,11 @@
     <Description>A library generated from a OpenAPI doc</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>clipapisdk</RootNamespace>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\clipapisdk.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/tylerstarcher/ClipApiSdk</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
+    <PackageReleaseNotes>Add support for MotionApi</PackageReleaseNotes>
     <Nullable>annotations</Nullable>
     <Title>ClipApiSdk</Title>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
